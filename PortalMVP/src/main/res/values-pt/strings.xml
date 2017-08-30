@@ -1,0 +1,16 @@
+<resources>
+    <!--app-->
+    <string name="press_again_to_exits">Pressione novamente para sair</string>
+
+
+    <!--错误码-->
+    <string name="error_cateory_string">,Falha ao obter o programa</string>
+    <string name="error_code_sn_string">,acesso falhou, reabrir o aplicativo</string>
+    <string name="error_code_try_agan">, reabrir o aplicativo</string>
+    <string name="error_code_play_string">,falha de play , por favor, mude de canal</string>
+    <string name="error_code_product_string">,Este dispositivo não está ativada, consulte o seu agente!</string>
+    <string name="error_code_net_string">,Por favor, verifique a rede</string>
+
+    <!--end-->
+
+</resources>

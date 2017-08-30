@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_code_play_string">,La reproducción no es cambiar de canal, por favor inténtelo de nuevo</string>
+    <string name="error_code_product_string">,El producto ha caducado</string>
+    <string name="error_code_sn_string">,Visita a la derrota, deja de intentarlo de nuevo</string>
+</resources>

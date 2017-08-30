@@ -1,0 +1,25 @@
+ext {
+    domain = [
+            //更新主备域名
+            DOMAIN_UPDATE_1 : "ji1.mxq1b.com",
+            DOMAIN_UPDATE_2 : "vup.k2glu.com",
+            //广告域名
+            DOMAIN_AD       : "hqp.t5pur.com",
+            //系统通知域名
+            DOMAIN_NOTICE   : "gt3.kt2wt.com:8000",
+            //ALive的epg节目预告baseUrl
+            DOMAIN_EPG      : "vaw.gou2u.com",
+            DOMAIN_EPG4B    : "va2r.ou2sv.com:8000",
+            //A系列激活主备域名
+            DOMAIN_AAA_1    : "cdab.p2mqt.com",
+            DOMAIN_AAA_2    : "cdab.p2mqt.com",
+            //A系列gslb域名
+            DOMAIN_LIVE_GSLB: "yqx.hr6yz.com:18888",
+            //A系列上报域名
+            DOMAIN_COLLECT_DATA:"qzx.ty3w2.com:8855",
+    ]
+    attr = [
+            isDebug   : true,
+            DEFAULT_SN: "a3.00-12.31-99999999"
+    ]
+}

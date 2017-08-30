@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--圆角ImageView-->
+    <declare-styleable name="RoundImageView">
+        <attr name="image_radis" format="dimension" />
+        <attr name="image_angle" format="dimension" />
+    </declare-styleable>
+
+</resources>

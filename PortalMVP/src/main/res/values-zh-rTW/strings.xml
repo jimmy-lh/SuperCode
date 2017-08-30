@@ -1,0 +1,19 @@
+<resources>
+    <!--app-->
+    <string name="press_again_to_exits">再按一次退出該程序</string>
+
+    <!--云启错误码提示-->
+    <string name="film_reloading">,重新加載...</string>
+    <string name="error_code_play_exit">,播放失,請退出重試</string>
+    <string name="error_code_play_fail">,播放失敗</string>
+    <string name="error_code_sn_string">,訪問失敗,請退出重試</string>
+    <string name="error_cateory_string">,節目單獲取失敗</string>
+    <string name="error_code_try_agan">,請退出重試!</string>
+    <string name="error_code_programe_string">,網絡狀態不佳,節目單獲取失敗,請稍后重試!</string>
+    <string name="error_code_play_string">,播放失敗,請換臺重试</string>
+    <string name="error_code_product_string">,產品已過期</string>
+    <string name="error_code_net_string">,請檢查網絡</string>
+    <string name="load_data_error">,節目單加載失敗，請切换分类重試!</string>
+    <!--end-->
+
+</resources>

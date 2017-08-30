@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "DEFAULT_SN", "\"${rootProject.ext.attr.DEFAULT_SN}\""
+        //激活主备
+        buildConfigField "String", "DOMAIN_AAA_1", "\"${rootProject.ext.domain.DOMAIN_AAA_1}\""
+        buildConfigField "String", "DOMAIN_AAA_2", "\"${rootProject.ext.domain.DOMAIN_AAA_2}\""
+        //节目预告
+        buildConfigField "String", "DOMAIN_EPG", "\"${rootProject.ext.domain.DOMAIN_EPG}\""
+        //gslb
+        buildConfigField "String", "DOMAIN_LIVE_GSLB", "\"${rootProject.ext.domain.DOMAIN_LIVE_GSLB}\""
+        //数据上报
+        buildConfigField "String", "DOMAIN_COLLECT_DATA", "\"${rootProject.ext.domain.DOMAIN_COLLECT_DATA}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //本地maven仓库开始
+    compile 'com.supernet.library:AdverSystem:latest.integration'
+    compile 'com.supernet.library:ApplicationUpdate:latest.integration'
+    compile 'com.supernet.library:FeedBack:latest.integration'
+    compile 'com.supernet.library:SwlAuth:latest.integration'
+    compile 'com.supernet.library:SwlNotice:latest.integration'
+    compile 'com.supernet.library:netspeed:latest.integration'
+    compile 'com.supernet.library:SepiaSystem:latest.integration'
+    //本地maven仓库结束
+
+    compile project(':CommonClasses')
+}

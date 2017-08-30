@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "Boolean", "isDebug", "${rootProject.ext.attr.isDebug}"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+
+    //retrofit start
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    compile('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //retrofit end
+
+//    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'org.xutils:xutils:3.5.0'
+    compile 'com.umeng.analytics:analytics:5.5.3'
+    compile 'cn.bingoogolapple:bga-adapter:1.1.9'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:latest.integration'
+}

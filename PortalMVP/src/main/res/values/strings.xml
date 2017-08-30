@@ -1,0 +1,25 @@
+<resources>
+    <!--app-->
+    <string name="press_again_to_exits">Press again to exits!</string>
+
+    <!--错误码-->
+    <string name="error_code_neterror">EE1-</string>
+    <string name="error_code_play_type">EC-</string>
+    <string name="error_code_product_type">ED-</string>
+    <string name="error_code_net_type">EE-</string>
+    <string name="error_code_sn_type">EA-</string>
+    <string name="error_code_cateory_type">EB-</string>
+
+    <string name="film_reloading">,Reloading...</string>
+    <string name="error_code_sn_string">,Access failed,please quit and try again</string>
+    <string name="error_cateory_string">,Failed to get the program</string>
+    <string name="error_code_product_string">,This device is not activated, please consult your dealer!</string>
+    <string name="error_code_try_agan">,please quit and try again</string>
+    <string name="error_code_play_string">,Play failure,Please change the channel</string>
+    <string name="error_code_play_exit">,Play failure,please quit and try again</string>
+    <string name="error_code_play_fail">,Play failure</string>
+    <string name="error_code_net_string">,Please check the network</string>
+    <string name="load_data_error">,Program list loaded failed,please switch the category  to retry.</string>
+    <!--end-->
+
+</resources>
