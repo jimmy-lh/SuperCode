@@ -18,59 +18,20 @@ import android.widget.Toast;
 import com.cyhd.portalmvp.R;
 import com.cyhd.portalmvp.constant.PlayConstant;
 import com.cyhd.portalmvp.constant.PortalErr;
-import com.cyhd.portalmvp.mvp.network.RxManager;
-import com.cyhd.portalmvp.receiver.NetworkConnectChangedReceiver;
-import com.cyhd.portalmvp.receiver.TimeChangedReceiver;
+import com.lh.commonclasses.base.CommonBaseActivity;
+import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
+import com.lh.commonclasses.receiver.NetworkConnectChangedReceiver;
+import com.lh.commonclasses.receiver.TimeChangedReceiver;
 import com.lh.commonclasses.utils.ActivityCollectUtil;
 import com.cyhd.portalmvp.utilsErr.PlayUmengCollection;
 import com.cyhd.portalmvp.utilsErr.ShowErrorMsgUtil;
 import com.lh.commonclasses.utils.LogUtil;
 import com.umeng.analytics.MobclickAgent;
 
-import org.coolx.applicationupdate.CoolXMainActivity;
-
-
-public abstract class MVPBaseActivity extends CoolXMainActivity implements TimeChangedReceiver.OnTimeChangedListener, NetworkConnectChangedReceiver.onNetworkConnectChangedListener {
+public abstract class MVPBaseActivity extends CommonBaseActivity  {
 
     protected String TAG;
     private String errorStr = ""; //错误码提示信息
-
-    /**
-     * 获取IntentData
-     */
-    protected abstract void getIntentData();
-
-    /**
-     * @return 返回布局R.layout.xxx
-     */
-    protected abstract int getLayoutId();
-
-    /**
-     * 初始化布局以及View控件
-     */
-    protected abstract void initView(Bundle savedInstanceState);
-
-    /**
-     * 处理业务逻辑，状态恢复等操作
-     *
-     * @param savedInstanceState
-     */
-    protected abstract void processLogic(Bundle savedInstanceState);
-
-    /**
-     * 查找View
-     *
-     * @param id   控件的id
-     * @param <VT> View类型
-     * @return
-     */
-    protected <VT extends View> VT getViewById(@IdRes int id) {
-        return (VT) findViewById(id);
-    }
-
-    public void replaceFragment(@IdRes int resID, Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(resID, fragment).commitAllowingStateLoss();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,25 +47,16 @@ public abstract class MVPBaseActivity extends CoolXMainActivity implements TimeC
     @Override
     protected void onResume() {
         super.onResume();
-        registerHomeKeyReceiver();
-        registerNetConnectChangedReceiver();
-        registerTimeChangedReceiver();
-        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        unRegisterHomeKeyReceiver();
-        unRegisterNetConnectChangedReceiver();
-        unRegisterTimeChangedReceiver();
-        MobclickAgent.onPause(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollectUtil.removeActivity(this);
     }
 
     @Override

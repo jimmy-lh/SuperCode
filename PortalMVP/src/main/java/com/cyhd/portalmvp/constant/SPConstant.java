@@ -4,7 +4,7 @@ import com.cyhd.portalmvp.BuildConfig;
 import com.cyhd.portalmvp.base.BaseApp;
 import com.cyhd.portalmvp.mvp.beanResult.GetColumnContentsResult;
 import com.cyhd.portalmvp.mvp.beanResult.GetShelveDataResult;
-import com.cyhd.portalmvp.utils.DesUtil;
+import com.lh.commonclasses.utils.DesUtil;
 import com.lh.commonclasses.utils.SPUtil;
 
 /**

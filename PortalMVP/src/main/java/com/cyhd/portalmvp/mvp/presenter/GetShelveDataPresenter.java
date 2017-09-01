@@ -5,7 +5,7 @@ import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.base.BasePresenter;
 import com.cyhd.portalmvp.mvp.bean.GetShelveDataBean;
 import com.cyhd.portalmvp.mvp.beanResult.GetShelveDataResult;
-import com.cyhd.portalmvp.mvp.converterFactory.bean.ResultException;
+import com.lh.commonclasses.retrofit2rxjava.converterFactory.bean.ResultException;
 import com.cyhd.portalmvp.mvp.model.GetShelveDataModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetShelveDataModel;
 import com.cyhd.portalmvp.mvp.view.IGetShelveDataView;

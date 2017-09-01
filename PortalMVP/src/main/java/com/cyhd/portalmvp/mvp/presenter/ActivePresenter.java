@@ -7,7 +7,7 @@ import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.base.BasePresenter;
 import com.cyhd.portalmvp.mvp.bean.ActiveBean;
 import com.cyhd.portalmvp.mvp.beanResult.ActiveResult;
-import com.cyhd.portalmvp.mvp.converterFactory.bean.ResultException;
+import com.lh.commonclasses.retrofit2rxjava.converterFactory.bean.ResultException;
 import com.cyhd.portalmvp.mvp.model.ActiveModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IActiveModel;
 import com.cyhd.portalmvp.mvp.view.IActiveView;

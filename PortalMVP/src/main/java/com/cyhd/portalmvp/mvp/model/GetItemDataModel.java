@@ -2,10 +2,8 @@ package com.cyhd.portalmvp.mvp.model;
 
 import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.bean.GetItemDataBean;
-import com.cyhd.portalmvp.mvp.beanResult.GetItemDataResult;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetItemDataModel;
-import com.cyhd.portalmvp.mvp.network.CustomSubscriber;
-import com.cyhd.portalmvp.utils.DesUtil;
+import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

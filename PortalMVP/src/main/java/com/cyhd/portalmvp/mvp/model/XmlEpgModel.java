@@ -5,9 +5,9 @@ import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.beanResult.XmlEpgsResult;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IXmlEpgModel;
 import com.cyhd.portalmvp.mvp.network.ApiFactory;
-import com.cyhd.portalmvp.mvp.network.CustomSubscriber;
-import com.cyhd.portalmvp.mvp.network.RxManager;
-import com.cyhd.portalmvp.mvp.network.RxRequest;
+import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
+import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
+import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
 import com.lh.commonclasses.utils.LogUtil;
 
 public class XmlEpgModel implements IXmlEpgModel {

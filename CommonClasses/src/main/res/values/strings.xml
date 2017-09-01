@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CommonClasses</string>
+    <!--app-->
+    <string name="press_again_to_exits">Press again to exits!</string>
 </resources>

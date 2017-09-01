@@ -2,10 +2,8 @@ package com.cyhd.portalmvp.mvp.model;
 
 import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.bean.GetColumnRecommendResourceBean;
-import com.cyhd.portalmvp.mvp.beanResult.GetColumnRecommendResourceResult;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetColumnRecommendResourceModel;
-import com.cyhd.portalmvp.mvp.network.CustomSubscriber;
-import com.cyhd.portalmvp.utils.DesUtil;
+import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

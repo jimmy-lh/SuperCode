@@ -2,7 +2,7 @@ package com.lh.commonclasses.utils;
 
 import android.text.TextUtils;
 
-import com.lh.commonclasses.base.BaseApp;
+import com.lh.commonclasses.base.CommonBaseApp;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,7 +24,7 @@ public class CacheUtil {
      * @return
      */
     public static String getCachePath(String type) {
-        String path = BaseApp.getInstance().getExternalFilesDir(type).getPath() + "/";
+        String path = CommonBaseApp.getInstance().getExternalFilesDir(type).getPath() + "/";
         return path;
     }
 

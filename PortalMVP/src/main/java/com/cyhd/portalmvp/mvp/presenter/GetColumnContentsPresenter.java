@@ -7,7 +7,7 @@ import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.base.BasePresenter;
 import com.cyhd.portalmvp.mvp.bean.GetColumnContentsBean;
 import com.cyhd.portalmvp.mvp.beanResult.GetColumnContentsResult;
-import com.cyhd.portalmvp.mvp.converterFactory.bean.ResultException;
+import com.lh.commonclasses.retrofit2rxjava.converterFactory.bean.ResultException;
 import com.cyhd.portalmvp.mvp.model.GetColumnContentsModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetColumnContentsModel;
 import com.cyhd.portalmvp.mvp.view.IGetColumnContentsView;

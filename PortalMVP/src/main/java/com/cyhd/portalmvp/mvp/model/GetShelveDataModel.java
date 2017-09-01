@@ -6,10 +6,10 @@ import com.cyhd.portalmvp.mvp.bean.GetShelveDataBean;
 import com.cyhd.portalmvp.mvp.beanResult.GetShelveDataResult;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetShelveDataModel;
 import com.cyhd.portalmvp.mvp.network.ApiFactory;
-import com.cyhd.portalmvp.mvp.network.CustomSubscriber;
-import com.cyhd.portalmvp.mvp.network.RxManager;
-import com.cyhd.portalmvp.mvp.network.RxRequest;
-import com.cyhd.portalmvp.utils.DesUtil;
+import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
+import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
+import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
+import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -5,9 +5,9 @@ import com.cyhd.portalmvp.mvp.base.BaseBeanResult;
 import com.cyhd.portalmvp.mvp.beanResult.GetIPResult;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetIPModel;
 import com.cyhd.portalmvp.mvp.network.ApiFactory;
-import com.cyhd.portalmvp.mvp.network.CustomSubscriber;
-import com.cyhd.portalmvp.mvp.network.RxManager;
-import com.cyhd.portalmvp.mvp.network.RxRequest;
+import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
+import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
+import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
 
 public class GetIPModel implements IGetIPModel {
 

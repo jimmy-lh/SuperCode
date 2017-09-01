@@ -7,6 +7,7 @@ import com.cyhd.portalmvp.mvp.network.api.LivePlayUrlApi;
 import com.cyhd.portalmvp.mvp.network.api.PortalApi;
 import com.cyhd.portalmvp.mvp.network.api.SlbApi;
 import com.cyhd.portalmvp.mvp.network.api.XmlEpgApi;
+import com.lh.commonclasses.retrofit2rxjava.network.ApiRetrofit;
 import com.lh.commonclasses.utils.LogUtil;
 
 /**
