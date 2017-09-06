@@ -22,6 +22,7 @@ import com.umeng.analytics.MobclickAgent;
 
 public abstract class CommonBaseActivity extends FragmentActivity implements TimeChangedReceiver.OnTimeChangedListener, NetworkConnectChangedReceiver.onNetworkConnectChangedListener {
     protected String TAG;
+    public Context mContext = this;
 
     /**
      * 获取IntentData
