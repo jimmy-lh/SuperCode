@@ -55,7 +55,7 @@ public class UmengDataCollection {
     private static long lastCollectTime;
 
     public static void collectLiveMsg(String eventKey, ChannelList channel) {
-        if (eventKey == UmengEventKey.CH_BUFFERING && (SystemClock.uptimeMillis() - lastCollectTime < 5000)) {
+       /* if (eventKey == UmengEventKey.CH_BUFFERING && (SystemClock.uptimeMillis() - lastCollectTime < 5000)) {
             return;
         }
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -74,10 +74,11 @@ public class UmengDataCollection {
         MobclickAgent.onEvent(BaseApp.getInstance(), eventKey, eventMap);
         if (eventKey == UmengEventKey.CH_BUFFERING)
             lastCollectTime = SystemClock.uptimeMillis();
+            */
     }
 
     public static void collectNetMsg(String eventKey, String serverIP) {
-        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+      /*  SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HashMap<String, String> eventMap = new HashMap<String, String>();
         eventMap.put(UmengKey.START_TIME, sDateFormat.format(new Date()));
         eventMap.put(UmengKey.SN, BaseApp.getInstance().getSn());
@@ -89,12 +90,12 @@ public class UmengDataCollection {
         LogUtil.d(TAG, "serverIP=" + serverIP);
         LogUtil.d(TAG, "====================== CollectionLiveMsg end=====================");
         MobclickAgent.onEvent(BaseApp.getInstance(), eventKey, eventMap);
-
+*/
     }
 
     @SuppressLint("SimpleDateFormat")
     public static void collectionErrInfoMsg(String eventKey) {
-        if (!TextUtils.isEmpty(eventKey)) {
+      /*  if (!TextUtils.isEmpty(eventKey)) {
             SimpleDateFormat sDateFormat = new SimpleDateFormat(
                     "yyyy-MM-dd HH:mm:ss");
             HashMap<String, String> eventMap = new HashMap<String, String>();
@@ -102,6 +103,7 @@ public class UmengDataCollection {
             eventMap.put("sn", BaseApp.getInstance().getSn());
             MobclickAgent.onEvent(BaseApp.getInstance(), eventKey, eventMap);
         }
+        */
     }
 
 }

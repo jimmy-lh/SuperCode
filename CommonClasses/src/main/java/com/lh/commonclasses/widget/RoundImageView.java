@@ -14,6 +14,8 @@ import com.lh.commonclasses.R;
 
 /**
  * 使用方式：在xml中定义参数rs:image_radis="10dp"即可设置圆角图片
+ * xml文件中增加下面的命名空间
+ * xmlns:rs="http://schemas.android.com/apk/res-auto"
  */
 public class RoundImageView extends ImageView {
     private int radis;

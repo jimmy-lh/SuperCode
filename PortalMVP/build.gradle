@@ -33,13 +33,13 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //本地maven仓库开始
-    compile 'com.supernet.library:AdverSystem:latest.integration'
-    compile 'com.supernet.library:ApplicationUpdate:latest.integration'
-    compile 'com.supernet.library:FeedBack:latest.integration'
-    compile 'com.supernet.library:SwlAuth:latest.integration'
-    compile 'com.supernet.library:SwlNotice:latest.integration'
-    compile 'com.supernet.library:netspeed:latest.integration'
-    compile 'com.supernet.library:SepiaSystem:latest.integration'
+//    compile 'com.supernet.library:AdverSystem:latest.integration'
+//    compile 'com.supernet.library:ApplicationUpdate:latest.integration'
+//    compile 'com.supernet.library:FeedBack:latest.integration'
+//    compile 'com.supernet.library:SwlAuth:latest.integration'
+//    compile 'com.supernet.library:SwlNotice:latest.integration'
+//    compile 'com.supernet.library:netspeed:latest.integration'
+//    compile 'com.supernet.library:SepiaSystem:latest.integration'
     //本地maven仓库结束
 
     compile project(':CommonClasses')
