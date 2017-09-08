@@ -29,5 +29,5 @@ dependencies {
     //微信支付，不包含统计功能
 //    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 
-    compile project(':PortalMVP')
+    compile project(':CommonClasses')
 }
