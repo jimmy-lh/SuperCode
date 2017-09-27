@@ -14,7 +14,7 @@ import com.lh.commonclasses.R;
 
 /**
  * 这个代码不能实际使用，还需要调试
- * 向左滑显示删除按钮的ListView
+ * 向左滑显示删除按钮的ListView，它的item布局必须是RelativeLayout,删除按钮才会显示在最右边
  */
 public class BandDeleteListView extends ListView implements View.OnTouchListener,
         GestureDetector.OnGestureListener {
