@@ -15,12 +15,10 @@
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
-    <ListView
+    <com.lh.commonclasses.widgetback.BandDeleteListView
         android:id="@+id/lv_image"
         android:layout_width="match_parent"
-        android:focusableInTouchMode="true"
-        android:layout_height="match_parent">
-
-    </ListView>
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true" />
 
 </FrameLayout>
