@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_rainbow="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,10 +16,19 @@
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
+    <com.lh.commonclasses.widgetback.RainbowBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app_rainbow:rainbowbar_color="@android:color/holo_blue_bright"
+        app_rainbow:rainbowbar_hspace="80dp"
+        app_rainbow:rainbowbar_vspace="10dp" />
+
+
     <com.lh.commonclasses.widgetback.BandDeleteListView
         android:id="@+id/lv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:visibility="invisible" />
 
 </FrameLayout>

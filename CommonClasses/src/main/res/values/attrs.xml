@@ -7,4 +7,9 @@
         <attr name="image_angle" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="rainbowbar">
+        <attr name="rainbowbar_hspace" format="dimension"/>
+        <attr name="rainbowbar_vspace" format="dimension"/>
+        <attr name="rainbowbar_color" format="color"/>
+    </declare-styleable>
 </resources>
