@@ -12,7 +12,7 @@ import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
 import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 /**
  * 4.1.7portal_online_07：兑换码兑换接口
@@ -40,7 +40,7 @@ public class ExchangeModel implements IExchangeModel {
             @Override
             public void onError(Throwable e) {
                 super.onError(e);
-                LogUtil.d(TAG, e.toString());
+                SuperLog.d(TAG, e.toString());
                 baseBeanResult.onError(e);
             }
         };

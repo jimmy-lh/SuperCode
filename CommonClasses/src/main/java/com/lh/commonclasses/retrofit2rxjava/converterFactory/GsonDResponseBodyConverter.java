@@ -6,7 +6,7 @@ import com.lh.commonclasses.retrofit2rxjava.converterFactory.bean.ResultExceptio
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.lh.commonclasses.utils.DesUtil;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -93,14 +93,14 @@ public final class GsonDResponseBodyConverter<T> implements Converter<ResponseBo
                 EncryptJsonBean jsonBean = gson.fromJson(response, EncryptJsonBean.class);
                 String decrypt = DesUtil.decrypt(jsonBean.getData());
                 response = response.replace("\"" + jsonBean.getData() + "\"", decrypt);
-                LogUtil.d(TAG, "解密" + type + response);
+                SuperLog.d(TAG, "解密" + type + response);
                 return gson.fromJson(response, type);
             } else {
-                LogUtil.d(TAG, "无需解密" + type + response);
+                SuperLog.d(TAG, "无需解密" + type + response);
                 return gson.fromJson(response, type);
             }
         } else {
-            LogUtil.e(TAG, "returnCode = " + result.getReturnCode() + ",message = " + result.getErrorMessage());
+            SuperLog.e(TAG, "returnCode = " + result.getReturnCode() + ",message = " + result.getErrorMessage());
             throw new ResultException(result.getReturnCode(), result.getErrorMessage());
         }
     }

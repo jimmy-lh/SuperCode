@@ -11,7 +11,7 @@ import com.lh.commonclasses.retrofit2rxjava.converterFactory.bean.ResultExceptio
 import com.cyhd.portalmvp.mvp.model.ActiveModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IActiveModel;
 import com.cyhd.portalmvp.mvp.view.IActiveView;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -52,11 +52,11 @@ public class ActivePresenter extends BasePresenter<IActiveView> implements BaseB
                     && !TextUtils.isEmpty(result.getData().getUserName())
                     && !TextUtils.isEmpty(result.getData().getUserToken())
                     && !TextUtils.isEmpty(result.getData().getPortalCodeList().get(0).getPortalCode())) {
-                LogUtil.d(TAG, "激活成功");
+                SuperLog.d(TAG, "激活成功");
                 model.saveData(result);
                 view.onSucceedActive();
             } else {
-                LogUtil.d(TAG, "onActivationSuc 激活失败");
+                SuperLog.d(TAG, "onActivationSuc 激活失败");
                 if (!result.getReturnCode().equals("0")) {
                     errCode = result.getReturnCode();
                 } else {
@@ -75,10 +75,10 @@ public class ActivePresenter extends BasePresenter<IActiveView> implements BaseB
     public void onError(Throwable e) {
         String errCode;
 
-        LogUtil.d(TAG, "激活耗时：" + (System.currentTimeMillis() - start_auth_time) + "ms");
+        SuperLog.d(TAG, "激活耗时：" + (System.currentTimeMillis() - start_auth_time) + "ms");
         if (e instanceof ResultException) {
             ResultException err = (ResultException) e;
-            LogUtil.e(TAG, "ResultException=" + err.getReturnCode() + ((ResultException) e).getErrorMessage());
+            SuperLog.e(TAG, "ResultException=" + err.getReturnCode() + ((ResultException) e).getErrorMessage());
             errCode = err.getReturnCode();
         } else if (e instanceof TimeoutException
                 || e instanceof ConnectException
@@ -90,6 +90,6 @@ public class ActivePresenter extends BasePresenter<IActiveView> implements BaseB
             errCode = PortalErr.PORTAL_SYSTEM;
         }
         view.showErrDialogActive(errCode);
-        LogUtil.d(TAG, "激活失败");
+        SuperLog.d(TAG, "激活失败");
     }
 }

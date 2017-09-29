@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.text.format.Time;
 
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import org.coolx.applicationupdate.HttpUtility;
 
@@ -395,7 +395,7 @@ public class DateUtil {
 			
 		} catch (ParseException e) {
 			e.printStackTrace();
-			LogUtil.e(TAG,"transfer error");
+			SuperLog.e(TAG,"transfer error");
 		}
 
 		return null;

@@ -11,7 +11,7 @@ import com.cyhd.portalmvp.mvp.network.ApiFactory;
 import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
 import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 /**
  * Created on 2017/7/19.
@@ -32,10 +32,10 @@ public class GetLivePlayUrlModel implements IGetLivePlayUrlModel {
             public void onError(Throwable e) {
                 super.onError(e);
                 e.printStackTrace();
-                LogUtil.i(TAG, "播放地址请求错误");
+                SuperLog.i(TAG, "播放地址请求错误");
                 if (requestTime == 1) {
                     requestTime++;
-                    LogUtil.i(TAG, "播放地址请求换域名重试一次");
+                    SuperLog.i(TAG, "播放地址请求换域名重试一次");
                     if (!TextUtils.isEmpty(UrlConstant.CACHE_SLB_HOST)) {
                         UrlConstant.NEW_SLB_HOST=UrlConstant.CACHE_SLB_HOST;
                         getLivePlayUrl(slb_param,playCode, baseBeanResult);
@@ -45,7 +45,7 @@ public class GetLivePlayUrlModel implements IGetLivePlayUrlModel {
                 } else if (requestTime == 2) {
                     requestTime=1;
                     baseBeanResult.onError(e,playCode);
-                    LogUtil.i(TAG, "播放地址请求二次都失败");
+                    SuperLog.i(TAG, "播放地址请求二次都失败");
                 }
 
             }

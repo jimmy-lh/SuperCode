@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 import com.lh.supercode.adapter.ImageAdapter;
 import com.lh.supercode.model.ImageModel;
 
@@ -72,20 +72,20 @@ public class MainActivity extends AppCompatActivity {
         lv_image.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                LogUtil.e(TAG, "onScrollStateChanged");
+                SuperLog.e(TAG, "onScrollStateChanged");
                 switch (scrollState) {
                     case SCROLL_STATE_IDLE:
-                        LogUtil.e(TAG, "SCROLL_STATE_IDLE.");
+                        SuperLog.e(TAG, "SCROLL_STATE_IDLE.");
                         //滑动停止
                         Glide.with(MainActivity.this).resumeRequests();
                         break;
                     case SCROLL_STATE_FLING:
-                        LogUtil.e(TAG, "SCROLL_STATE_FLING....");
+                        SuperLog.e(TAG, "SCROLL_STATE_FLING....");
                         //正在滚动
                         Glide.with(MainActivity.this).pauseRequests();
                         break;
                     case AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:
-                        LogUtil.e(TAG, ".....SCROLL_STATE_TOUCH_SCROLL");
+                        SuperLog.e(TAG, ".....SCROLL_STATE_TOUCH_SCROLL");
                         //正在滚动
                         Glide.with(MainActivity.this).pauseRequests();
                         break;
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//                LogUtil.e(TAG, "onScroll");
+//                SuperLog.e(TAG, "onScroll");
             }
         });
 

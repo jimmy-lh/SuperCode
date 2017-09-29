@@ -16,7 +16,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp" />
 
-    <com.lh.commonclasses.widgetback.RainbowBar
+    <com.lh.commonclasses.ui.widgetback.RainbowBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app_rainbow:rainbowbar_color="@android:color/holo_blue_bright"
@@ -24,7 +24,7 @@
         app_rainbow:rainbowbar_vspace="10dp" />
 
 
-    <com.lh.commonclasses.widgetback.BandDeleteListView
+    <com.lh.commonclasses.ui.widgetback.BandDeleteListView
         android:id="@+id/lv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

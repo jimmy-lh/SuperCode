@@ -52,7 +52,7 @@ public class MetricsUtil {
      */
     public static float PixelsToDip(Context context, float Pixels) {
         final float SCALE = context.getResources().getDisplayMetrics().density;
-        LogUtil.d("MetricsUtil", "dpi=" + context.getResources().getDisplayMetrics().densityDpi);
+        SuperLog.d("MetricsUtil", "dpi=" + context.getResources().getDisplayMetrics().densityDpi);
         float dips = Pixels / SCALE;
         return dips;
     }

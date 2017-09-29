@@ -13,7 +13,7 @@ import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 /**
  * 4.1.4portal_online_04：用户心跳接口
@@ -25,7 +25,7 @@ public class HeartBeatModel implements IHeartBeatModel {
 
     @Override
     public void heartBeat(HeartBeatBean heartBeatBean, final BaseBeanResult baseBeanResult) {
-        LogUtil.d(TAG, "" + heartBeatBean);
+        SuperLog.d(TAG, "" + heartBeatBean);
         //将数据转成json数据然后加密
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
         final String json = DesUtil.encrypt(gson.toJson(heartBeatBean));

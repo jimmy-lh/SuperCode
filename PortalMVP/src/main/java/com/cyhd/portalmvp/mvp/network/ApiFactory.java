@@ -8,7 +8,7 @@ import com.cyhd.portalmvp.mvp.network.api.PortalApi;
 import com.cyhd.portalmvp.mvp.network.api.SlbApi;
 import com.cyhd.portalmvp.mvp.network.api.XmlEpgApi;
 import com.lh.commonclasses.retrofit2rxjava.network.ApiRetrofit;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 /**
  * Singleton Factory with retrofit
@@ -43,10 +43,10 @@ public class ApiFactory {
     public static PortalApi getPortalApiSwitch(int requestTimes) {
         synchronized (monitor) {
             if (requestTimes == 1) {
-                LogUtil.i(TAG, "请求第一次ip=" + AAA_PORTAL_BASE_URL);
+                SuperLog.i(TAG, "请求第一次ip=" + AAA_PORTAL_BASE_URL);
                 mPortalApi = ApiRetrofit.getCustomRetrofit(AAA_PORTAL_BASE_URL).create(PortalApi.class);
             } else if (requestTimes == 2) {
-                LogUtil.i(TAG, "请求第二次ip=" + SPAREAAA_PORTAL_BASE_URL);
+                SuperLog.i(TAG, "请求第二次ip=" + SPAREAAA_PORTAL_BASE_URL);
                 mPortalApi = ApiRetrofit.getCustomRetrofit(SPAREAAA_PORTAL_BASE_URL).create(PortalApi.class);
             }
             return mPortalApi;
@@ -75,10 +75,10 @@ public class ApiFactory {
     public static SlbApi getSlbApi(int requestTimes) {
         synchronized (monitor) {
             if (requestTimes == 1) {
-                LogUtil.i(TAG, "请求第一次ip=" + UrlConstant.slb_url);
+                SuperLog.i(TAG, "请求第一次ip=" + UrlConstant.slb_url);
                 mSlbApi = ApiRetrofit.getRetrofit(UrlConstant.slb_url).create(SlbApi.class);
             } else if (requestTimes == 2) {
-                LogUtil.i(TAG, "请求第二次ip=" + UrlConstant.slb_spare_url);
+                SuperLog.i(TAG, "请求第二次ip=" + UrlConstant.slb_spare_url);
                 mSlbApi = ApiRetrofit.getRetrofit(UrlConstant.slb_spare_url).create(SlbApi.class);
             }
             return mSlbApi;

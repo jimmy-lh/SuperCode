@@ -13,7 +13,7 @@ import com.cyhd.portalmvp.mvp.beanResult.SlbBeanResult;
 import com.cyhd.portalmvp.mvp.model.SlbModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.ISlbModel;
 import com.cyhd.portalmvp.mvp.view.ISlbView;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 import com.lh.commonclasses.utils.SPUtil;
 
 import java.net.ConnectException;
@@ -52,7 +52,7 @@ public class SlbPresenter extends BasePresenter<ISlbView> implements BaseBeanRes
 
     @Override
     public void onNext(SlbBeanResult result) {
-        LogUtil.d(TAG, "glsb耗时=" + (System.currentTimeMillis() - start_glsb_time) + "ms");
+        SuperLog.d(TAG, "glsb耗时=" + (System.currentTimeMillis() - start_glsb_time) + "ms");
         SPConstant.request_slb_done = true;
         if (result != null) {
             String cache_slb = SPUtil.getString(BaseApp.getContext(), SPConstant.SLB_HOST);
@@ -62,19 +62,19 @@ public class SlbPresenter extends BasePresenter<ISlbView> implements BaseBeanRes
                  *  view.requestSlbSuccess(result);回调成功方法里面加一行代码 ： UrlConstant.NEW_SLB_HOST = result.getSlb_host();
                  */
 
-                LogUtil.d(TAG, "NEW_SLB_HOST=" + UrlConstant.NEW_SLB_HOST);
+                SuperLog.d(TAG, "NEW_SLB_HOST=" + UrlConstant.NEW_SLB_HOST);
                 SPUtil.putString(BaseApp.getContext(), SPConstant.SLB_HOST, result.getSlb_host());
                 PlayErrorMessage.getInstace().clearMessage();
                 view.requestSlbSuccess(result);
             } else if (!TextUtils.isEmpty(cache_slb)) {
                 UrlConstant.CACHE_SLB_HOST = cache_slb;
-                LogUtil.d(TAG, "cache_slb=" + UrlConstant.CACHE_SLB_HOST);
+                SuperLog.d(TAG, "cache_slb=" + UrlConstant.CACHE_SLB_HOST);
                 PlayErrorMessage.getInstace().clearMessage();
                 view.requestSlbSuccess(result);
             } else  {
                 int error_code=0;
                 if (!TextUtils.isEmpty(result.getReturn_code())) {
-                    LogUtil.d(TAG, "result.getReturn_code=" + result.getReturn_code());
+                    SuperLog.d(TAG, "result.getReturn_code=" + result.getReturn_code());
                     try {
                         error_code=Integer.parseInt(result.getReturn_code());
                     } catch (Exception e) {
@@ -90,15 +90,15 @@ public class SlbPresenter extends BasePresenter<ISlbView> implements BaseBeanRes
 
     @Override
     public void onError(Throwable e) {
-        LogUtil.d(TAG, "requestSlbError");
-        LogUtil.d(TAG, "glsb耗时=" + (System.currentTimeMillis() - start_glsb_time) + "ms");
+        SuperLog.d(TAG, "requestSlbError");
+        SuperLog.d(TAG, "glsb耗时=" + (System.currentTimeMillis() - start_glsb_time) + "ms");
         e.printStackTrace();
         int error_code=0;
         SPConstant.request_slb_done = true;
         String cache_slb = SPUtil.getString(BaseApp.getContext(), SPConstant.SLB_HOST);
         if (!TextUtils.isEmpty(cache_slb)) {
             UrlConstant.NEW_SLB_HOST = cache_slb;
-            LogUtil.d(TAG, "requestSlbError cache_slb=" + UrlConstant.NEW_SLB_HOST);
+            SuperLog.d(TAG, "requestSlbError cache_slb=" + UrlConstant.NEW_SLB_HOST);
             PlayErrorMessage.getInstace().clearMessage();
         } else if (e instanceof HttpException) {              //HTTP错误
             HttpException httpException = (HttpException) e;
@@ -111,7 +111,7 @@ public class SlbPresenter extends BasePresenter<ISlbView> implements BaseBeanRes
                 case INTERNAL_SERVER_ERROR:
                 case BAD_GATEWAY:
                 case SERVICE_UNAVAILABLE: {
-                    LogUtil.d(TAG, "requestSlbError httpException.code()=" + httpException.code());
+                    SuperLog.d(TAG, "requestSlbError httpException.code()=" + httpException.code());
                     error_code=PlayConstant.PLAY_GSLB_EXCEPTION;
                 }
                 break;
@@ -121,7 +121,7 @@ public class SlbPresenter extends BasePresenter<ISlbView> implements BaseBeanRes
         } else if (e instanceof ConnectException
                 || e instanceof SocketTimeoutException
                 || e instanceof TimeoutException) {
-            LogUtil.d(TAG, "requestSlbError TimeoutException");
+            SuperLog.d(TAG, "requestSlbError TimeoutException");
             error_code=PlayConstant.PLAY_GSLB_DISCONNECT;
         }
         PlayErrorMessage.getInstace().setErrorCode(error_code);

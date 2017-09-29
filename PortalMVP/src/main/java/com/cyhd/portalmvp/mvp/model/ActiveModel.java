@@ -15,7 +15,7 @@ import com.lh.commonclasses.utils.DesUtil;
 import com.cyhd.portalmvp.constant.SPConstant;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -34,7 +34,7 @@ public class ActiveModel implements IActiveModel {
 
     @Override
     public void active(final ActiveBean activeBean, final BaseBeanResult baseBeanResult) {
-        LogUtil.d(TAG, activeBean.toString());
+        SuperLog.d(TAG, activeBean.toString());
         //将数据转成json数据然后加密
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
         final String json = DesUtil.encrypt(gson.toJson(activeBean));

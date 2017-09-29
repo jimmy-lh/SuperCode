@@ -1,4 +1,4 @@
-package com.lh.commonclasses.widget;
+package com.lh.commonclasses.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;

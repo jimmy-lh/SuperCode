@@ -76,7 +76,7 @@ public class GlideUtil {
                     @Override
                     public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
                         if (url.equals(imageView.getTag(R.id.image_tag))) {
-                            LogUtil.d(TAG, "请求图片成功 = " + url);
+                            SuperLog.d(TAG, "请求图片成功 = " + url);
                             imageView.setImageDrawable(resource);
                         }
                     }

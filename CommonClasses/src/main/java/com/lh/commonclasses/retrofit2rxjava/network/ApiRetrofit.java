@@ -1,7 +1,7 @@
 package com.lh.commonclasses.retrofit2rxjava.network;
 
 import com.lh.commonclasses.retrofit2rxjava.converterFactory.GsonDConverterFactory;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +40,7 @@ public class ApiRetrofit {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request();
-                        LogUtil.d(TAG, request.toString());
+                        SuperLog.d(TAG, request.toString());
                         return chain.proceed(request);
                     }
                 }).build();
@@ -68,7 +68,7 @@ public class ApiRetrofit {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request();
-                        LogUtil.d(TAG, request.toString());
+                        SuperLog.d(TAG, request.toString());
                         return chain.proceed(request);
                     }
                 }).build();
@@ -96,7 +96,7 @@ public class ApiRetrofit {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request();
-                        LogUtil.d(TAG, request.toString());
+                        SuperLog.d(TAG, request.toString());
                         return chain.proceed(request);
                     }
                 }).build();

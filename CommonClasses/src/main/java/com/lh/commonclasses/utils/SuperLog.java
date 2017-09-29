@@ -4,7 +4,10 @@ import android.util.Log;
 
 import com.lh.commonclasses.BuildConfig;
 
-public class LogUtil {
+/**
+ * 超级Log,可以通过config.gradle里面的isDebug控制是否打印信息
+ */
+public class SuperLog {
     public static int LOG_LEVEL = 6;
     public static int VERBOSE = 5;
     public static int DEBUG = 4;

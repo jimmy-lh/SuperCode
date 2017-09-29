@@ -8,7 +8,7 @@ import com.cyhd.portalmvp.mvp.network.ApiFactory;
 import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
 import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 public class XmlEpgModel implements IXmlEpgModel {
     private String TAG = "XmlEpgModel";
@@ -17,21 +17,21 @@ public class XmlEpgModel implements IXmlEpgModel {
 
     @Override
     public void getXmlEpg(String epgUrl, final BaseBeanResult baseBeanResult) {
-        LogUtil.d(TAG, epgUrl.toString());
+        SuperLog.d(TAG, epgUrl.toString());
 
         RxManager.getInstance().cancel(RxConstant.XML_EPG);
         mCustomSubscriber = new CustomSubscriber<XmlEpgsResult>() {
             @Override
             public void onNext(XmlEpgsResult xmlEpgsResult) {
                 super.onNext(xmlEpgsResult);
-                LogUtil.d(TAG, "" + xmlEpgsResult);
+                SuperLog.d(TAG, "" + xmlEpgsResult);
                 baseBeanResult.onNext(xmlEpgsResult);
             }
 
             @Override
             public void onError(Throwable e) {
                 super.onError(e);
-                LogUtil.d(TAG, e.toString());
+                SuperLog.d(TAG, e.toString());
                 baseBeanResult.onError(e);
             }
         };

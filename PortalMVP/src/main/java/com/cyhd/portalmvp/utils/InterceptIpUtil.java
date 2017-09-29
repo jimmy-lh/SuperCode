@@ -1,6 +1,6 @@
 package com.cyhd.portalmvp.utils;
 
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.URI;
 import java.util.regex.Matcher;
@@ -51,7 +51,7 @@ public class InterceptIpUtil {
                 str = split2[0];
             }
         }
-        LogUtil.d(TAG, "getInterceptIP=" + str);
+        SuperLog.d(TAG, "getInterceptIP=" + str);
         return str;
     }
 

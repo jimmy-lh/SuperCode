@@ -1,17 +1,8 @@
 package com.cyhd.portalmvp.utils;
 
 import android.annotation.SuppressLint;
-import android.os.SystemClock;
-import android.text.TextUtils;
 
-import com.cyhd.portalmvp.base.BaseApp;
 import com.cyhd.portalmvp.mvp.beanResult.ChannelList;
-import com.lh.commonclasses.utils.LogUtil;
-import com.umeng.analytics.MobclickAgent;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 
 /**
  * 友盟数据收集工具类
@@ -64,13 +55,13 @@ public class UmengDataCollection {
         eventMap.put(UmengKey.SN, BaseApp.getInstance().getSn());
         eventMap.put(UmengKey.CHANNEL_ID, channel.getChannelCode());
         eventMap.put(UmengKey.CHANNEL_NAME, channel.getName());
-        LogUtil.d(TAG, "====================== CollectionLiveMsg start=====================");
-        LogUtil.d(TAG, "eventKey=" + eventKey);
-        LogUtil.d(TAG, "START_TIME=" + sDateFormat.format(new Date()));
-        LogUtil.d(TAG, "SN=" + BaseApp.getInstance().getSn());
-        LogUtil.d(TAG, "channelId=" + channel.getChannelCode());
-        LogUtil.d(TAG, "channelName=" + channel.getName());
-        LogUtil.d(TAG, "====================== CollectionLiveMsg end=====================");
+        SuperLog.d(TAG, "====================== CollectionLiveMsg start=====================");
+        SuperLog.d(TAG, "eventKey=" + eventKey);
+        SuperLog.d(TAG, "START_TIME=" + sDateFormat.format(new Date()));
+        SuperLog.d(TAG, "SN=" + BaseApp.getInstance().getSn());
+        SuperLog.d(TAG, "channelId=" + channel.getChannelCode());
+        SuperLog.d(TAG, "channelName=" + channel.getName());
+        SuperLog.d(TAG, "====================== CollectionLiveMsg end=====================");
         MobclickAgent.onEvent(BaseApp.getInstance(), eventKey, eventMap);
         if (eventKey == UmengEventKey.CH_BUFFERING)
             lastCollectTime = SystemClock.uptimeMillis();
@@ -83,12 +74,12 @@ public class UmengDataCollection {
         eventMap.put(UmengKey.START_TIME, sDateFormat.format(new Date()));
         eventMap.put(UmengKey.SN, BaseApp.getInstance().getSn());
         eventMap.put(UmengKey.SERVE_IP, serverIP);
-        LogUtil.d(TAG, "====================== CollectionLiveMsg start=====================");
-        LogUtil.d(TAG, "eventKey=" + eventKey);
-        LogUtil.d(TAG, "START_TIME=" + sDateFormat.format(new Date()));
-        LogUtil.d(TAG, "SN=" + BaseApp.getInstance().getSn());
-        LogUtil.d(TAG, "serverIP=" + serverIP);
-        LogUtil.d(TAG, "====================== CollectionLiveMsg end=====================");
+        SuperLog.d(TAG, "====================== CollectionLiveMsg start=====================");
+        SuperLog.d(TAG, "eventKey=" + eventKey);
+        SuperLog.d(TAG, "START_TIME=" + sDateFormat.format(new Date()));
+        SuperLog.d(TAG, "SN=" + BaseApp.getInstance().getSn());
+        SuperLog.d(TAG, "serverIP=" + serverIP);
+        SuperLog.d(TAG, "====================== CollectionLiveMsg end=====================");
         MobclickAgent.onEvent(BaseApp.getInstance(), eventKey, eventMap);
 */
     }

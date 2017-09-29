@@ -9,7 +9,7 @@ import com.cyhd.portalmvp.mvp.network.ApiFactory;
 import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
 import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +27,7 @@ public class DataCollectModel implements IDataCollectModel {
 
     @Override
     public void dataCollect(final DataCollectBean apkPlayBean, final BaseBeanResult baseBeanResult) {
-        LogUtil.d(TAG, "" + apkPlayBean);
+        SuperLog.d(TAG, "" + apkPlayBean);
         final RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), bean2Json(apkPlayBean));
 
         RxManager.getInstance().cancel(RxConstant.APK_PLAY);
@@ -64,7 +64,7 @@ public class DataCollectModel implements IDataCollectModel {
             jsonObject.put("user_sn", apkPlayBean.getUser_sn());
             jsonObject.put("apk_id", apkPlayBean.getApk_id());
             jsonObject.put("title", apkPlayBean.getTitle());
-            LogUtil.d(TAG, "jsonObject = " + jsonObject.toString());
+            SuperLog.d(TAG, "jsonObject = " + jsonObject.toString());
             return jsonObject.toString();
         } catch (JSONException e) {
             e.printStackTrace();

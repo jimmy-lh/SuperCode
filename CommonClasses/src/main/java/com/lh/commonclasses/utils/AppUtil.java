@@ -47,10 +47,10 @@ public class AppUtil {
      */
     public static boolean isFirstEnterApp(Context context) {
         boolean result = SPUtil.getBoolean(context, SPConstant.USER_ENTER_STATE, true);
-        LogUtil.d(TAG, "isFirstIn=" + result);
+        SuperLog.d(TAG, "isFirstIn=" + result);
         if (result) {
             SPUtil.putBoolean(context, SPConstant.USER_ENTER_STATE, false);
-            LogUtil.d(TAG, "put=" + SPUtil.getBoolean(context, SPConstant.USER_ENTER_STATE, true));
+            SuperLog.d(TAG, "put=" + SPUtil.getBoolean(context, SPConstant.USER_ENTER_STATE, true));
         }
         return result;
     }
@@ -112,7 +112,7 @@ public class AppUtil {
                 language = "pt-PT";
             }
         }
-        LogUtil.d(TAG, "language=" + language);
+        SuperLog.d(TAG, "language=" + language);
         return language;
     }
 }

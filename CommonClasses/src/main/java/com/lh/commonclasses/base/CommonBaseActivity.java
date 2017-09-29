@@ -17,7 +17,7 @@ import com.lh.commonclasses.receiver.NetworkConnectChangedReceiver;
 import com.lh.commonclasses.receiver.TimeChangedReceiver;
 import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.utils.ActivityCollectUtil;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 import com.umeng.analytics.MobclickAgent;
 
 public abstract class CommonBaseActivity extends FragmentActivity implements TimeChangedReceiver.OnTimeChangedListener, NetworkConnectChangedReceiver.onNetworkConnectChangedListener {
@@ -120,14 +120,14 @@ public abstract class CommonBaseActivity extends FragmentActivity implements Tim
      * 有的app不需要这个功能，所以有需要的app在自己框架中定义的BaseActivity中继承onBackPressed方法，然后调用此方法就行了
      */
     protected void pressAgain2Exits() {
-        LogUtil.d(TAG, "pressAgain2Exits");
+        SuperLog.d(TAG, "pressAgain2Exits");
         if ((System.currentTimeMillis() - mExitTime) > 2000) {
             cancelExitHintToast();
             mExitHintToast = Toast.makeText(this, getString(R.string.press_again_to_exits), Toast.LENGTH_SHORT);
             mExitHintToast.show();
             mExitTime = System.currentTimeMillis();
         } else {
-            LogUtil.d(TAG, " super.onBackPressed()");
+            SuperLog.d(TAG, " super.onBackPressed()");
             cancelExitHintToast();
             super.onBackPressed();
             exit();

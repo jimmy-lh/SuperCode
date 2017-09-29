@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 import com.umeng.analytics.MobclickAgent;
 
 import org.xutils.x;
@@ -46,6 +46,6 @@ public abstract class CommonBaseApp extends Application {
     public void initUMeng() {
         MobclickAgent.setDebugMode(false);
         MobclickAgent.openActivityDurationTrack(false);
-        LogUtil.d(TAG, "initUMeng");
+        SuperLog.d(TAG, "initUMeng");
     }
 }

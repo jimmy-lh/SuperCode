@@ -12,7 +12,7 @@ import com.cyhd.portalmvp.mvp.model.GetColumnContentsModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetColumnContentsModel;
 import com.cyhd.portalmvp.mvp.view.IGetColumnContentsView;
 import com.cyhd.portalmvp.utilsErr.PortalErrUtil;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -40,14 +40,14 @@ public class GetColumnContentsPresenter extends BasePresenter<IGetColumnContents
     @Override
     public void onNext(GetColumnContentsResult result) {
         //返回错误码
-        LogUtil.d(TAG, "分类接口耗时=" + (System.currentTimeMillis() - mStartGetColumnContentsTime) + "ms");
-        LogUtil.d(TAG, "最新栏目节目单获取成功");
+        SuperLog.d(TAG, "分类接口耗时=" + (System.currentTimeMillis() - mStartGetColumnContentsTime) + "ms");
+        SuperLog.d(TAG, "最新栏目节目单获取成功");
         if (result != null && result.getData() != null
                 && result.getData().getChildColumnList() != null
                 && result.getData().getChildColumnList().size() > 0) {
             if (!TextUtils.isEmpty(result.getData().getChildColumnList().get(0).getOrderFlag())
                     && result.getData().getChildColumnList().get(0).getOrderFlag().equals("0")) {
-                LogUtil.e(TAG, "显示Dialog信息ED1");
+                SuperLog.e(TAG, "显示Dialog信息ED1");
                 //ED1
                 PortalErrUtil.getInstance().setErrCode(PortalErr.STR_PRODUCT_WITHOUT_AUTH);
                 view.showErrDialogGetColumnContents(PortalErr.STR_PRODUCT_WITHOUT_AUTH);
@@ -55,7 +55,7 @@ public class GetColumnContentsPresenter extends BasePresenter<IGetColumnContents
                 view.onSucceedGetColumnContents(result);
             }
         } else {
-            LogUtil.e(TAG, "显示Dialog信息EB1");
+            SuperLog.e(TAG, "显示Dialog信息EB1");
             //Eb1
             PortalErrUtil.getInstance().setErrCode(PortalErr.PORTAL_ROOT_COLUMN);
             view.showErrDialogGetColumnContents(PortalErr.PORTAL_ROOT_COLUMN);
@@ -69,16 +69,16 @@ public class GetColumnContentsPresenter extends BasePresenter<IGetColumnContents
 
         if (e instanceof ResultException) {
             ResultException err = (ResultException) e;
-            LogUtil.e(TAG, "ResultException=" + err.getReturnCode() + ((ResultException) e).getErrorMessage());
+            SuperLog.e(TAG, "ResultException=" + err.getReturnCode() + ((ResultException) e).getErrorMessage());
             errCode = err.getReturnCode();
         } else if (e instanceof TimeoutException
                 || e instanceof ConnectException
                 || e instanceof SocketTimeoutException) {
-            LogUtil.e(TAG, "显示Dialog信息EB2");
+            SuperLog.e(TAG, "显示Dialog信息EB2");
             //	eb2
             errCode = PortalErr.STR_BOX_EPG_TIMEOUT_ERROR;
         } else {
-            LogUtil.e(TAG, "显示Dialog信息EB3");
+            SuperLog.e(TAG, "显示Dialog信息EB3");
             //EB3
             errCode = PortalErr.PORTAL_SYSTEM;
         }

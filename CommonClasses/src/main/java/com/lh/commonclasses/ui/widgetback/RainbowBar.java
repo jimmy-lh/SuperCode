@@ -1,4 +1,4 @@
-package com.lh.commonclasses.widgetback;
+package com.lh.commonclasses.ui.widgetback;
 
 import android.content.Context;
 import android.content.res.TypedArray;

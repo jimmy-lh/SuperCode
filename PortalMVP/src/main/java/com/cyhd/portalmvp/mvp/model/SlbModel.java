@@ -8,7 +8,7 @@ import com.cyhd.portalmvp.mvp.network.ApiFactory;
 import com.lh.commonclasses.retrofit2rxjava.network.CustomSubscriber;
 import com.lh.commonclasses.retrofit2rxjava.network.RxManager;
 import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 /**
  * Created on 2017/7/19.
@@ -30,15 +30,15 @@ public class SlbModel implements ISlbModel {
         mCustomSubscriber = new CustomSubscriber<SlbBeanResult>() {
             @Override
             public void onError(Throwable e) {
-                LogUtil.e(TAG, "请求glsb失败，" + requestTime);
+                SuperLog.e(TAG, "请求glsb失败，" + requestTime);
                 e.printStackTrace();
                 super.onError(e);
                 if (requestTime == 1) {
-                    LogUtil.e(TAG, "请求glsb失败1，重试一次");
+                    SuperLog.e(TAG, "请求glsb失败1，重试一次");
                     requestTime++;
                     getSLB(user_id, type, trans_id, app_id, lang, baseBeanResult);
                 } else if (requestTime == 2) {
-                    LogUtil.e(TAG, "请求glsb失败2，打印错误信息");
+                    SuperLog.e(TAG, "请求glsb失败2，打印错误信息");
                     requestTime = 1;
                     baseBeanResult.onError(e);
                 }
@@ -46,9 +46,9 @@ public class SlbModel implements ISlbModel {
 
             @Override
             public void onNext(SlbBeanResult slbBeanResult) {
-                LogUtil.e(TAG, "请求glsb成功");
+                SuperLog.e(TAG, "请求glsb成功");
                 super.onNext(slbBeanResult);
-                LogUtil.d(TAG, "" + slbBeanResult);
+                SuperLog.d(TAG, "" + slbBeanResult);
                 baseBeanResult.onNext(slbBeanResult);
             }
 

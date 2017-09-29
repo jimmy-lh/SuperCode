@@ -10,7 +10,7 @@ import com.cyhd.portalmvp.mvp.model.GetShelveDataModel;
 import com.cyhd.portalmvp.mvp.model.modelInterface.IGetShelveDataModel;
 import com.cyhd.portalmvp.mvp.view.IGetShelveDataView;
 import com.cyhd.portalmvp.utilsErr.PortalErrUtil;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -64,7 +64,7 @@ public class GetShelveDataPresenter extends BasePresenter<IGetShelveDataView> im
 
         if (e instanceof ResultException) {
             ResultException err = (ResultException) e;
-            LogUtil.e(TAG,"ResultException="+err.getReturnCode()+((ResultException) e).getErrorMessage());
+            SuperLog.e(TAG,"ResultException="+err.getReturnCode()+((ResultException) e).getErrorMessage());
             errCode=err.getReturnCode();
         }else if (e instanceof TimeoutException
                 || e instanceof ConnectException

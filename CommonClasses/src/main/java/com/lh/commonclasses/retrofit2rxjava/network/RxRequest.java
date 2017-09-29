@@ -1,6 +1,6 @@
 package com.lh.commonclasses.retrofit2rxjava.network;
 
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeUnit;
@@ -71,7 +71,7 @@ public class RxRequest implements IRxRequest {
                                 .flatMap(new Func1<Throwable, Observable<?>>() {
                                     @Override
                                     public Observable<?> call(Throwable throwable) {
-                                        LogUtil.d(TAG, "限制错误访问次数，异常处理throwable = " + throwable);
+                                        SuperLog.d(TAG, "限制错误访问次数，异常处理throwable = " + throwable);
                                         return Observable.timer(errDelay, TimeUnit.SECONDS);
                                     }
                                 });
@@ -105,7 +105,7 @@ public class RxRequest implements IRxRequest {
                                 .flatMap(new Func1<Throwable, Observable<?>>() {
                                     @Override
                                     public Observable<?> call(Throwable throwable) {
-                                        LogUtil.d(TAG, "无限循环，异常处理throwable = " + throwable);
+                                        SuperLog.d(TAG, "无限循环，异常处理throwable = " + throwable);
                                         return Observable.error(throwable);
                                     }
                                 });
@@ -142,7 +142,7 @@ public class RxRequest implements IRxRequest {
                                 .flatMap(new Func1<Throwable, Observable<?>>() {
                                     @Override
                                     public Observable<?> call(Throwable throwable) {
-                                        LogUtil.d(TAG, "无限循环，异常处理throwable = " + throwable);
+                                        SuperLog.d(TAG, "无限循环，异常处理throwable = " + throwable);
                                         return Observable.timer(errDelay, TimeUnit.SECONDS);
                                     }
                                 });
@@ -186,7 +186,7 @@ public class RxRequest implements IRxRequest {
                                 .flatMap(new Func1<Throwable, Observable<?>>() {
                                     @Override
                                     public Observable<?> call(Throwable throwable) {
-                                        LogUtil.d(TAG, "正常无限循环，异常限制次数，异常处理throwable = " + throwable);
+                                        SuperLog.d(TAG, "正常无限循环，异常限制次数，异常处理throwable = " + throwable);
                                         return Observable.timer(errDelay, TimeUnit.SECONDS);
                                     }
                                 });

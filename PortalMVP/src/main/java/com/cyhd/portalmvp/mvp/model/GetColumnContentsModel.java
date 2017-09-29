@@ -12,7 +12,7 @@ import com.lh.commonclasses.retrofit2rxjava.network.RxRequest;
 import com.lh.commonclasses.utils.DesUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lh.commonclasses.utils.LogUtil;
+import com.lh.commonclasses.utils.SuperLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -29,7 +29,7 @@ public class GetColumnContentsModel implements IGetColumnContentsModel {
 
     @Override
     public void getColumnContents(final GetColumnContentsBean getColumnContentsBean, final BaseBeanResult baseBeanResult) {
-        LogUtil.d(TAG, "" + getColumnContentsBean);
+        SuperLog.d(TAG, "" + getColumnContentsBean);
         //将数据转成json数据然后加密
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
         final String json = DesUtil.encrypt(gson.toJson(getColumnContentsBean));

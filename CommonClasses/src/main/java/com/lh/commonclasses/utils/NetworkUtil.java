@@ -93,7 +93,7 @@ public class NetworkUtil {
                 boolean ishostConnect = false;
                 try {
                     ishostConnect = InetAddress.getByName(ip).isReachable(timeOut);
-                    LogUtil.d(TAG, "ip = " + ip + ",网络 ishostConnect= " + ishostConnect);
+                    SuperLog.d(TAG, "ip = " + ip + ",网络 ishostConnect= " + ishostConnect);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -115,7 +115,7 @@ public class NetworkUtil {
     public static String domain2ip(String domain) {
 
         if (isIP(domain)) {//判断是否是ip地址，如果是，直接返回
-            LogUtil.d(TAG, "是ip地址,直接返回，无需解析");
+            SuperLog.d(TAG, "是ip地址,直接返回，无需解析");
             return domain;
         }
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -123,11 +123,11 @@ public class NetworkUtil {
             StrictMode.setThreadPolicy(policy);
         }
         try {
-            LogUtil.d(TAG, "开始解析" + domain);
+            SuperLog.d(TAG, "开始解析" + domain);
             InetAddress address = InetAddress.getByName(domain);
             return address.getHostAddress();
         } catch (UnknownHostException e) {
-            LogUtil.d(TAG, new StringBuilder(domain).append(" DNS解析失败").toString());
+            SuperLog.d(TAG, new StringBuilder(domain).append(" DNS解析失败").toString());
         }
         return null;
     }
