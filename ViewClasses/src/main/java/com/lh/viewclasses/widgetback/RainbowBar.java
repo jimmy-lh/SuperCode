@@ -1,4 +1,4 @@
-package com.lh.commonclasses.ui.widgetback;
+package com.lh.viewclasses.widgetback;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,9 +9,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.lh.commonclasses.R;
 import com.lh.commonclasses.utils.MetricsUtil;
-
+import com.lh.viewclasses.R;
 
 /**
  * 彩虹bar

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CommonClasses/CommonClasses.iml" filepath="$PROJECT_DIR$/CommonClasses/CommonClasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/PortalMVP/PortalMVP.iml" filepath="$PROJECT_DIR$/PortalMVP/PortalMVP.iml" />
       <module fileurl="file://$PROJECT_DIR$/SuperCode.iml" filepath="$PROJECT_DIR$/SuperCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewClasses/ViewClasses.iml" filepath="$PROJECT_DIR$/ViewClasses/ViewClasses.iml" />
       <module fileurl="file://$PROJECT_DIR$/WeChatPay/WeChatPay.iml" filepath="$PROJECT_DIR$/WeChatPay/WeChatPay.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

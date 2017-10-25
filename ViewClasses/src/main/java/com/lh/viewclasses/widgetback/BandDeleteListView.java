@@ -1,4 +1,4 @@
-package com.lh.commonclasses.ui.widgetback;
+package com.lh.viewclasses.widgetback;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.lh.commonclasses.R;
+import com.lh.viewclasses.R;
 
 /**
  * 这个代码不能实际使用，还需要调试

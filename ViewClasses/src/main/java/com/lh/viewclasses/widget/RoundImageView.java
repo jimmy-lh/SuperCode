@@ -1,4 +1,4 @@
-package com.lh.commonclasses.ui.widget;
+package com.lh.viewclasses.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.lh.commonclasses.R;
+import com.lh.viewclasses.R;
 
 /**
  * 使用方式：在xml中定义参数rs:image_radis="10dp"即可设置圆角图片

@@ -1,4 +1,4 @@
-package com.lh.commonclasses.ui.widget;
+package com.lh.viewclasses.widget;
 
 import android.content.Context;
 import android.graphics.Typeface;

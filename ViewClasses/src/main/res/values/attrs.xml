@@ -12,4 +12,15 @@
         <attr name="rainbowbar_vspace" format="dimension"/>
         <attr name="rainbowbar_color" format="color"/>
     </declare-styleable>
+
+    <!--数字SeekBar  NumberSeekBar-->
+    <declare-styleable name="NumberSeekBar">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="textBackground" format="reference" />
+        <attr name="textOrientation" format="enum">
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+    </declare-styleable>
 </resources>
