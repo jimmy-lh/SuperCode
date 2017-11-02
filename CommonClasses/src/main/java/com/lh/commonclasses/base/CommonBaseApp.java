@@ -4,8 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
-import com.lh.commonclasses.utils.SuperLog;
-import com.umeng.analytics.MobclickAgent;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import org.xutils.x;
 
@@ -31,7 +30,7 @@ public abstract class CommonBaseApp extends Application {
         mInstance = this;
         TAG = this.getClass().getSimpleName();
         mContext = getApplicationContext();
-        initUMeng();
+        CrashReport.initCrashReport(getApplicationContext());//budly，跟友盟一样的
     }
 
     public static <AT extends CommonBaseApp> AT getInstance() {
@@ -43,9 +42,9 @@ public abstract class CommonBaseApp extends Application {
         x.Ext.setDebug(false);
     }
 
-    public void initUMeng() {
-        MobclickAgent.setDebugMode(false);
-        MobclickAgent.openActivityDurationTrack(false);
-        SuperLog.d(TAG, "initUMeng");
-    }
+//    public void initUMeng() {
+//        MobclickAgent.setDebugMode(false);
+//        MobclickAgent.openActivityDurationTrack(false);
+//        SuperLog.d(TAG, "initUMeng");
+//    }
 }

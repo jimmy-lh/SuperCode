@@ -1,2 +1,2 @@
-include ':app', ':WeChatPay', ':CommonClasses', ':ViewClasses'
+include ':app', ':WeChatPay', ':CommonClasses', ':ViewClasses', ':Texas', ':TexasFramework'
 include ':PortalMVP'
