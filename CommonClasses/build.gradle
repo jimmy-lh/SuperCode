@@ -62,5 +62,5 @@ dependencies {
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     compile 'com.ogaclejapan.smarttablayout:utils-v4:latest.integration'
 
-    compile 'com.tencent.bugly:crashreport:2.6.5' //Bugly SDK,更友盟一样
+    compile 'com.tencent.bugly:crashreport:2.6.5' //Bugly SDK,跟友盟一样
 }
