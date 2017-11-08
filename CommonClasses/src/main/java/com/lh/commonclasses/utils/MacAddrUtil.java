@@ -3,7 +3,10 @@ package com.lh.commonclasses.utils;
 import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.text.TextUtils;
 import android.util.Log;
+
+import com.lh.commonclasses.base.CommonBaseApp;
 
 import java.io.FileReader;
 import java.io.Reader;
@@ -101,7 +104,10 @@ public class MacAddrUtil {
                 e.printStackTrace();
 
             }
-
+        }
+        //为空时，获取wifi的mac地址，手机上跑的时候需要
+        if (TextUtils.isEmpty(macSerial)) {
+            getLocalMacAddressFromWifiInfo(CommonBaseApp.getContext());
         }
         return macSerial;
     }
